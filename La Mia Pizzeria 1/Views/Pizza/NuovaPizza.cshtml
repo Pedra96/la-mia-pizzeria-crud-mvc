@@ -49,16 +49,24 @@
             </div>
             <div class="mb-3">
                 <label>Categoria:</label>
-                    <option value""></option>
+                <option value""></option>
                 <select asp-for="Pizza.CategoriaId" rows="10" class="d-block w-100">
-                        <option value=""></option>
-                    @foreach(CategoriaPizza categoria in Model.Categorie) {
+                    <option value=""></option>
+                    @foreach (CategoriaPizza categoria in Model.Categorie) {
                         <option value="@categoria.Id">@categoria.Name</option>
                     }
 
-                <span asp-validation-for="Pizza.CategoriaId" class="text-danger"></span>
+                    <span asp-validation-for="Pizza.CategoriaId" class="text-danger"></span>
                 </select>
             </div>
+
+            <div class="mb-3">
+                <label>Ingredienti:</label>
+                <select asp-items="@Model.ListaIngredienti" asp-for="IngredientiUtenteScelti" rows="10" multiple class="form-select d-block w-100">
+                </select>
+
+            </div>
+
             <button type="submit" class="btn btn-primary">Invia</button>
 
             <a class="btn btn-primary col-1" href="@Url.Action("Index", "Pizza" )" role="button">Home</a>

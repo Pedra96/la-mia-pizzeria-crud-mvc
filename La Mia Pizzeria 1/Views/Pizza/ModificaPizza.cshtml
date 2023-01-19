@@ -29,13 +29,13 @@
             <input asp-for="Pizza.Id" type="hidden" class="form-control">
             <div class="mb-3">
                 <label>Inserire nome per la pizza:</label>
-                <input asp-for="Pizza.Title"  type="text" class="form-control" />
+                <input asp-for="Pizza.Title" type="text" class="form-control" />
                 <span asp-validation-for="Pizza.Title" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
                 <label>Inserire descrizione per la pizza:</label>
-                <input asp-for="Pizza.Description"  type="text" class="form-control" />
+                <input asp-for="Pizza.Description" type="text" class="form-control" />
             </div>
 
             <div class="mb-3">
@@ -45,7 +45,7 @@
             </div>
             <div class="mb-3">
                 <label>Inserire immagine per la pizza:</label>
-                <input asp-for="Pizza.Image"  type="text" class="form-control" />
+                <input asp-for="Pizza.Image" type="text" class="form-control" />
                 <span asp-validation-for="Pizza.Image" class="text-danger"></span>
             </div>
 
@@ -60,6 +60,13 @@
 
                     <span asp-validation-for="Pizza.CategoriaId" class="text-danger"></span>
                 </select>
+            </div>
+
+            <div class="mb-3">
+                <label>Ingredienti:</label>
+                <select asp-items="@Model.ListaIngredienti" asp-for="IngredientiUtenteScelti" rows="10" multiple class="form-select d-block w-100">
+                </select>
+
             </div>
 
             <button type="submit" class="btn btn-primary">Invia</button>

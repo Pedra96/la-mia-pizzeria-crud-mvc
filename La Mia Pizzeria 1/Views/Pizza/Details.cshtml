@@ -1,5 +1,6 @@
 ﻿@{
     Layout = null;
+    int x = 0;
 }
 @model Pizza
 
@@ -31,7 +32,15 @@
                         <h5 class="card-title">@Model.Title</h5>
                         <p class="card-text">@Model.Description</p>
                         <p class="card-text">Categoria: @Model.Categoria.Name</p>
+                        @if (Model.nIngredienti.Count > @x && Model.nIngredienti.Count!=null) {
+                            <span class="card-text">Ingredienti: |
+                            @foreach (var ingrediente in Model.nIngredienti) {
+                                <span>@ingrediente.Name | </span>
+                            }
+                            </span>
+                        }
                         <p class="card-text"><strong>Price:</strong> €@Model.Price</p>
+
                         <div class="text-center">
                             <a class="btn btn-primary col-3" href="@Url.Action("Index", "Pizza" )" role="button">Home</a>
                             <a class="btn btn-warning col-3" href="@Url.Action("ModificaPizza", "Pizza", new { id = Model.Id })" role="button">Modifica</a>

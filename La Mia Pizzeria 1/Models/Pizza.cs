@@ -26,6 +26,8 @@ namespace La_Mia_Pizzeria_1.Models {
         public int CategoriaId { get; set; }
         public CategoriaPizza? Categoria { get; set; }
 
+        public List<Ingrediente>? nIngredienti { get; set; }
+
 
         public Pizza() { }
 
